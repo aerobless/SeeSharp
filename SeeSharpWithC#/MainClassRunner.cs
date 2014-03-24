@@ -9,6 +9,7 @@ namespace SeeSharpWithC
 {
 	public class MainClassRunner
 	{
+
 		// Args work just like in Java
 		public static int Main (string[] args) //There can be only one main method in a project
 		{
@@ -25,6 +26,17 @@ namespace SeeSharpWithC
 			 * some helpful info when writing code. I wonder why it isn't enabled by default.
 			 */
 			Console.WriteLine ("Calculation Example: " + SimpleCalculate (1, 2, "plus"));
+			Console.WriteLine ("Calculation Example: " + SimpleCalculate (1, 4, "minus"));
+			Console.WriteLine ("Calculation Example: " + SimpleCalculate (8, 2, "divide"));
+			Console.WriteLine ("Calculation Example: " + SimpleCalculate (4, 4, "multiply"));
+
+			/* Apperently we need create the instance of this class in the main method
+			 * defining it outside doesn't seem to work due to "An object reference is
+			 * required to access non-static member ..."
+			 */
+			AdditionalClassExample example = new AdditionalClassExample ();
+			example.CoolMethodInOtherClass ();
+
 			return 0; // The main method can return stuff, forgetting to change the "void" results 
 			// in a compile-time error, the editor doesn't notice it earlier..
 		}
